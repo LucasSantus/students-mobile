@@ -1,0 +1,12 @@
+{
+  "name": "students-mobile",
+  "displayName": "students-mobile",
+  "expo": {
+    "name": "students-mobile",
+    "slug": "students-mobile",
+    "version": "1.0.0",
+    "assetBundlePatterns": [
+      "**/*"
+    ]
+  }
+}
