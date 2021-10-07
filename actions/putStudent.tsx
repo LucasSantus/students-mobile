@@ -14,6 +14,9 @@ export default function StudentGETAll() {
 
     const instance = axios.create({
         baseURL: 'http://127.0.0.1:8000/api/',
+        headers: {
+            "Content-type": "application/json"
+        }
     });
 
 	//add
@@ -21,35 +24,21 @@ export default function StudentGETAll() {
 
     useEffect(() => {
         instance
-          .get("students/1")
-          .then((response) => alert(response.data))
-          .catch((err) => {
-            alert("ops! ocorreu um erro" + err);
-          });
-      }, []);
+            .put("students/1/",{
+                pk: 1,
+                name: "LucasSantusSSSS",
+                email: "leos98fsdfdsfs77@gmail.com",
+                document: "tesdsgfdgadte",
+                phone: "fdsgssfdfdsgd",
+                registrationDate: "2021-10-07",
+            });
+    }, []);
 
     return (
         <View>
-                <Text>
-                    {post?.phone}
-                </Text>
-            
+            testeeeee
         </View>
     );
-
-    // return (
-    //     <View>
-    //         {posts.length > 0 ? (
-    //             posts.map((post) => (
-    //                 <Text>
-    //                     {post.email}
-    //                 </Text>
-    //             ))
-    //         ) : (
-    //             <Text>Open up StudentGETAll.tsx to start working on your StudentGETAll!</Text>
-    //         )}
-    //     </View>
-    // );
 }
 
 const styles = StyleSheet.create({

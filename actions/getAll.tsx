@@ -21,12 +21,19 @@ export default function StudentGETAll() {
 
     useEffect(() => {
         instance
-          .get("students")
-          .then((response) => setPosts(response.data))
-          .catch((err) => {
-            alert("ops! ocorreu um erro" + err);
-          });
-      }, []);
+            .get("students")
+            .then((response) => setPosts({
+                pk: response.data.id,
+                name: response.data.nome,
+                email: response.data.email,
+                document: response.data.document,
+                phone: response.data.phone,
+                registrationDate: response.data.registrationDate,
+            }))
+            .catch((err) => {
+                alert("ops! ocorreu um erro" + err);
+            });
+    }, []);
 
     return (
         <View>
